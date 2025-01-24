@@ -1,5 +1,6 @@
 import { Component, DestroyRef, Input, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs';
 import { APIEndpoint } from 'src/app/core/constants/api-endpoint';
@@ -16,7 +17,8 @@ export class ProductDetailsComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _httpService: HttpService,
     private _destroyRef: DestroyRef,
-     public cartService: CartService
+    public cartService: CartService,
+    private _sanitizer: DomSanitizer,
   ) { }
   oid!: any;
   isLoading: boolean = true;
@@ -39,6 +41,7 @@ export class ProductDetailsComponent implements OnInit {
             next: (res: any) => {
                 if (res?.body.code == 200) {
                     this.productDetails = res.body.data;
+                    this.downloadPhoto();
                 } else {
                     // this._router.navigate(['/page-not-found'], { skipLocationChange: true });
                 }
@@ -48,6 +51,18 @@ export class ProductDetailsComponent implements OnInit {
 
 addToCart(product: any): void {
   this.cartService.updateCart(product);
+}
+
+downloadPhoto(): void {
+  this._httpService.getFile(this.productDetails?.image_path, 'photo')
+  .subscribe({
+    next: (res: any) => {
+      if (res.body.type === 'image/*') {
+        const unsafeUrl = URL.createObjectURL(res.body);
+        this.productDetails.image_path = this._sanitizer.bypassSecurityTrustUrl(unsafeUrl);
+      }
+    }
+  });
 }
 
 }

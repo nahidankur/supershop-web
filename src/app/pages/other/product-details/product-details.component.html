@@ -6,11 +6,11 @@
 <div class="row">
   <div id="gallery" class="span3">
     <a
-      href="assets/images/products/large/f1.jpg"
+
       title="Fujifilm FinePix S2950 Digital Camera"
     >
       <img
-        src="assets/images/products/large/3.jpg"
+        [src]="productDetails?.image_path"
         style="width: 100%"
         alt="Fujifilm FinePix S2950 Digital Camera"
       />
@@ -76,12 +76,12 @@
     </div> -->
   </div>
   <div class="span6">
-    <h3>{{productDetails.name}}</h3>
-    <small>- {{productDetails.description}}</small>
+    <h3>{{productDetails?.name}}</h3>
+    <small>- {{productDetails?.description}}</small>
     <hr class="soft" />
     <form class="form-horizontal qtyFrm">
       <div class="control-group">
-        <label class="control-label"><span>${{productDetails.price}}</span></label>
+        <label class="control-label"><span>${{productDetails?.price}}</span></label>
         <div class="controls">
           <input type="number" class="span1" placeholder="Qty." />
           <button (click)="addToCart(productDetails)" type="submit" class="btn btn-large btn-primary pull-right">
@@ -92,7 +92,7 @@
     </form>
 
     <hr class="soft" />
-    <h4>{{productDetails.stock_quantity}} items in stock</h4>
+    <h4>{{productDetails?.stock_quantity}} items in stock</h4>
     <form class="form-horizontal qtyFrm pull-right">
       <div class="control-group">
         <label class="control-label"><span>Color</span></label>
@@ -108,7 +108,7 @@
     </form>
     <hr class="soft clr" />
     <p>
-     {{productDetails.description}}
+     {{productDetails?.description}}
     </p>
     <!-- <a class="btn btn-small pull-right" href="#detail">More Details</a> -->
     <br class="clr" />
