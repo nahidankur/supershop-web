@@ -15,7 +15,11 @@
         alt="Fujifilm FinePix S2950 Digital Camera"
       />
     </a>
-    <div id="differentview" class="moreOptopm carousel slide">
+
+
+
+
+    <!-- <div id="differentview" class="moreOptopm carousel slide">
       <div class="carousel-inner">
         <div class="item active">
           <a href="assets/images/products/large/f1.jpg">
@@ -58,13 +62,9 @@
           /></a>
         </div>
       </div>
-      <!--  
-			  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> 
-			  -->
-    </div>
+    </div> -->
 
-    <div class="btn-toolbar">
+    <!-- <div class="btn-toolbar">
       <div class="btn-group">
         <span class="btn"><i class="icon-envelope"></i></span>
         <span class="btn"><i class="icon-print"></i></span>
@@ -73,18 +73,18 @@
         <span class="btn"><i class="icon-thumbs-up"></i></span>
         <span class="btn"><i class="icon-thumbs-down"></i></span>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="span6">
-    <h3>Fujifilm FinePix S2950 Digital Camera</h3>
-    <small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
+    <h3>{{productDetails.name}}</h3>
+    <small>- {{productDetails.description}}</small>
     <hr class="soft" />
     <form class="form-horizontal qtyFrm">
       <div class="control-group">
-        <label class="control-label"><span>$222.00</span></label>
+        <label class="control-label"><span>${{productDetails.price}}</span></label>
         <div class="controls">
           <input type="number" class="span1" placeholder="Qty." />
-          <button type="submit" class="btn btn-large btn-primary pull-right">
+          <button (click)="addToCart(productDetails)" type="submit" class="btn btn-large btn-primary pull-right">
             Add to cart <i class="icon-shopping-cart"></i>
           </button>
         </div>
@@ -92,7 +92,7 @@
     </form>
 
     <hr class="soft" />
-    <h4>100 items in stock</h4>
+    <h4>{{productDetails.stock_quantity}} items in stock</h4>
     <form class="form-horizontal qtyFrm pull-right">
       <div class="control-group">
         <label class="control-label"><span>Color</span></label>
@@ -108,20 +108,16 @@
     </form>
     <hr class="soft clr" />
     <p>
-      14 Megapixels. 18.0 x Optical Zoom. 3.0-inch LCD Screen. Full HD photos
-      and 1280 x 720p HD movie capture. ISO sensitivity ISO6400 at reduced
-      resolution. Tracking Auto Focus. Motion Panorama Mode. Face Detection
-      technology with Blink detection and Smile and shoot mode. 4 x AA batteries
-      not included. WxDxH 110.2 ×81.4x73.4mm. Weight 0.341kg (excluding battery
-      and memory card). Weight 0.437kg (including battery and memory card).
+     {{productDetails.description}}
     </p>
-    <a class="btn btn-small pull-right" href="#detail">More Details</a>
+    <!-- <a class="btn btn-small pull-right" href="#detail">More Details</a> -->
     <br class="clr" />
     <a href="#" name="detail"></a>
     <hr class="soft" />
   </div>
 
-  <div class="span9">
+
+  <!-- <div class="span9">
     <ul id="productDetail" class="nav nav-tabs">
       <li class="active">
         <a href="#home" data-toggle="tab">Product Details</a>
@@ -591,5 +587,5 @@
         <br class="clr" />
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

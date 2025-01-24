@@ -66,5 +66,4 @@ export class LatestProductsComponent implements OnInit {
       addToCart(product: any): void {
         this.cartService.updateCart(product);
       }
-
 }

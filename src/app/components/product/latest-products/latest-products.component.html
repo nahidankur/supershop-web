@@ -3,7 +3,7 @@
     <ng-container *ngFor="let product of latestProducts">
       <li class="span3">
         <div class="thumbnail">
-          <a  routerLink="/product/3"><img [src]="product.image_url" alt=""/></a>
+          <a  [routerLink]="['/product', product.oid]"><img [src]="product.image_url" alt=""/></a>
           <div class="caption">
             <h5>{{ product.name }}</h5>
             <p> 
