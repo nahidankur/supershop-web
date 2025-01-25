@@ -1,8 +1,7 @@
 export class Constants {
     static LOGIN_ROUTE = '/auth/sign-in';
     static MOBILE_NO_REGEX = /^((01[3-9]{1})[0-9]{8})$/;
-    static AUTH_STORE_KEY = 'AtDZzoc86kCT0ylG';
-    static CURRENT_MODULE_KEY = 'MmN4Rc1v5QnwfM0s';
+    static AUTH_STORE_KEY = 'Opefhtejdtwdnrjd2';
     static PAGE_SIZE = 10;
     static NID_REGEX = '^([0-9]{10}|[0-9]{13}|[0-9]{17})$';
     static EMAIL_REGEX = '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-.]+$';

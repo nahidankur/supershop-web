@@ -9,4 +9,9 @@ export class APIEndpoint {
     static UPLOAD = '/file/upload';
     static DOWNLOAD = '/file/download';
     static DELETE = '/file/delete';
+
+    // security
+    static SIGN_IN = '/signin';
+    static REGISTRATION = '/registration';
+    static SIGN_OUT = '/signout';
 }
